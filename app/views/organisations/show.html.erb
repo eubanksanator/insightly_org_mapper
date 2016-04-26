@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @organisation.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @organisation.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @organisation.state %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @organisation.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @organisation.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
+<%= link_to 'Back', organisations_path %>
