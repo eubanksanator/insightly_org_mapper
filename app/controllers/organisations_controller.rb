@@ -5,6 +5,12 @@ class OrganisationsController < ApplicationController
   # GET /organisations.json
   def index
     @organisations = Organisation.all
+    @hash = Gmaps4rails.build_markers(@organisations) do |organisation, marker|
+      marker.lat organisation.latitude
+      marker.lng organisation.longitude
+
+      marker.infowindow render_to_string(:partial => "/organisations/info_window", :locals => { :organisation => organisation.title})
+    end
   end
 
   # GET /organisations/1
@@ -71,4 +77,4 @@ class OrganisationsController < ApplicationController
     def organisation_params
       params.require(:organisation).permit(:address, :city, :state, :latitude, :longitude)
     end
-end
+  end
