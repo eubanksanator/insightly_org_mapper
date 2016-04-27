@@ -4,6 +4,10 @@ class OrganisationsController < ApplicationController
   # GET /organisations
   # GET /organisations.json
   def index
+    @contacts = Insightly2.client.get_contacts
+    @take_1_client = @contacts.take(1)
+
+
     @organisations = Organisation.all
     @hash = Gmaps4rails.build_markers(@organisations) do |organisation, marker|
       marker.lat organisation.latitude

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'insightly2'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
