@@ -3,9 +3,11 @@
 <h1>Listing Organisations</h1>
 
 
-<div style='width: 800px;'>
-  <div id="multi_markers" style='width: 800px; height: 400px;'></div>
+<div>
+  <div id="multi_markers" style='width: auto; height: 600px;'></div>
 </div>
+
+<%= link_to 'New Organisation', new_organisation_path %>
 
 <script type="text/javascript">
   var handler = Gmaps.build('Google');
@@ -15,4 +17,3 @@
     handler.fitMapToBounds();
   });
 </script>
-<%= link_to 'New Organisation', new_organisation_path %>

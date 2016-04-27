@@ -8,6 +8,13 @@ class OrganisationsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@organisations) do |organisation, marker|
       marker.lat organisation.latitude
       marker.lng organisation.longitude
+      marker.title organisation[:title]
+      marker.picture({
+                    anchor: [40, 158], # added this optionally <- doesn't work either
+                    url: "#{view_context.image_path("logobadge.png") }",
+                    width: 32,
+                    height: 32
+                   })
 
       marker.infowindow render_to_string(:partial => "/organisations/info_window", :locals => { :organisation => organisation.title})
     end
